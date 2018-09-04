@@ -19,12 +19,3 @@ export function modelReducers(state = OrderedMap<string, BaseModel<{}>>(), actio
             return state;
     }
 }
-
-export function totalCountReducer(state = 0, action) {
-    switch (action.type) {
-        case 'SAVE_COUNT':
-            return action.count;
-        default:
-            return state;
-    }
-}
