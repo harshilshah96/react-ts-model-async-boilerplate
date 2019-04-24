@@ -1,0 +1,9 @@
+@import '../../themes/commons.scss';
+
+.ham-menu-container {
+    width: 26px;
+    overflow: hidden;
+    .ham-menu-img {
+        width: 100%;
+    }
+}

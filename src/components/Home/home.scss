@@ -1,0 +1,74 @@
+@import '../../themes/commons.scss';
+
+.home-page {
+    .layout-children {
+        min-height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        @include latoFont();
+
+        .select-category-title {
+            opacity: 0.1;
+            @include responsiveFonts(40px, 40px, 24px);
+            @include responsiveLetterSpacing(5px, 5px, 3px);
+            font-weight: bold;
+        }
+
+        .wateroilcharcaol-title {
+            @include responsiveFonts(14px, 14px, 12px);
+            @include responsiveLetterSpacing(1.75px, 1.75px, 1.25px);
+        }
+
+        .types-container {
+            width: 100%;
+            padding: 5vh 20vw;
+
+            @include mobile {
+                padding: 10vh 30vw;
+            }
+
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .type-img-container {
+                width: 22%;
+                @include responsiveWidths(22%, 22%, 80%);
+
+                .type-img {
+                    width: 100%;
+                }
+            }
+
+            .oilLogo-container {
+                @include mobile {
+                    width: 56% !important;
+                }
+            }
+
+            .separator-container {
+                width: 6.5%;
+
+                @include mobile {
+                    width: 15%;
+                    margin: 15%;
+                }
+
+                .separator-img {
+                    width: 100%;
+
+                    @include mobile {
+                        transform: rotate(-135deg);
+                    }
+                }
+
+                margin: 5%;
+            }
+        }
+    }
+}

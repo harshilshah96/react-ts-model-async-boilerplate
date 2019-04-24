@@ -1,0 +1,10 @@
+@import '../../themes/commons.scss';
+
+.close-button-container {
+    width: 26px;
+    overflow: hidden;
+
+    .close-button-img {
+        width: 100%;
+    }
+}

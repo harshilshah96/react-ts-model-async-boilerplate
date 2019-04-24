@@ -1,0 +1,14 @@
+@import '../../themes/commons.scss';
+
+.nav-links-container {
+    display: flex;
+    width: 310px;
+    justify-content: space-between;
+    @include latoFont();
+    font-size: 14px;
+    color: black;
+    overflow: hidden;
+    .nav-link {
+        color: black;
+    }
+}

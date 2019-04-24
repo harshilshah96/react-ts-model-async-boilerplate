@@ -1,0 +1,46 @@
+@import '../../themes/commons.scss';
+
+@mixin responsivePage {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.about-us-page {
+    .layout-children {
+        min-height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        @include latoFont();
+
+        .about-content {
+            opacity: 0.4;
+        }
+
+        .left-side {
+            @include responsivePage();
+
+            .left-header {
+                @include responsiveFonts(24px, 24px, 20px);
+            }
+
+            .left-content {
+                @include responsiveFonts(14px, 14px, 10px);
+            }
+        }
+
+        .right-side {
+            @include responsivePage();
+            @include responsiveFonts(24px, 24px, 20px);
+        }
+
+    }
+}

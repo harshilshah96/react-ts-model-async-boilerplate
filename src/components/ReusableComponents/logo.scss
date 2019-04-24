@@ -1,0 +1,23 @@
+@import '../../themes/commons.scss';
+
+.logo-container {
+    display: flex;
+    color: black;
+
+    .sulu-container {
+        @include logoFont();
+        @include responsiveFonts(30px, 30px, 20px);
+    }
+
+    .creations-container {
+        @include latoFont();
+        @include responsiveFonts(24px, 24px, 15px);
+        margin-left: 7px;
+        font-weight: 200;
+        letter-spacing: 3px;
+        @include mobile {
+            letter-spacing: 1.88px;
+            margin-left: 2px;
+        }
+    }
+}

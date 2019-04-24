@@ -39,7 +39,8 @@ module.exports = {
                             ];
                         }
                     }
-                }, {
+                }, 
+                {
                     loader: 'sass-loader' // compiles Sass to CSS
                 }]
             },
@@ -47,6 +48,10 @@ module.exports = {
                 test: /\.tsx?$/,
                 loader: "ts-loader",
                 exclude: /node_modules/
+            },
+            {
+                test: /.(woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+                use: 'url-loader?limit=1024&name=fonts/[name].[ext]'
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
