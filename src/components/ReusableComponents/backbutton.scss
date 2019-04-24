@@ -1,7 +1,0 @@
-@import '../../themes/commons.scss';
-
-.back-button-container {
-    @include responsiveFonts(15px, 15px, 10px);
-    color: black;
-    opacity: 0.3;
-}

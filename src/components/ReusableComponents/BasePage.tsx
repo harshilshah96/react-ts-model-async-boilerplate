@@ -1,31 +1,14 @@
 import * as React from 'react';
 import { NavBar } from '../Nav';
-import './basepage.scss';
-import { NavMenu } from '../Nav/NavMenu';
-export interface IBasePageProps {
-    hasMenu?: boolean;
-    className?: string;
-    style?: React.CSSProperties;
-}
 
-export interface IHomeState {
-    isMenuOpen: boolean;
-}
+export class BasePage extends React.Component<{ className?: string; style?: React.CSSProperties }> {
 
-export class BasePage extends React.Component<IBasePageProps, IHomeState> {
-
-    state = {
-        isMenuOpen: false,
+    static defaultProps = {
+        style: {}
     };
 
-    openMenu = () => this.setState({ isMenuOpen: true });
-    closeMenu = () => this.setState({ isMenuOpen: false });
-
     render() {
-        const { props: { className, children, style, hasMenu },
-            state: { isMenuOpen },
-            openMenu, closeMenu
-        } = this;
+        const { className, children, style } = this.props;
         return (<div
             className={`page ${className || ``}`}
             style={{
@@ -33,9 +16,9 @@ export class BasePage extends React.Component<IBasePageProps, IHomeState> {
                 ...style,
             }}
         >
-            <NavBar hasMenu={hasMenu} {...{ openMenu, closeMenu, isMenuOpen }} />
+            <NavBar />
             <div className="layout-children">
-                {!isMenuOpen ? children : <NavMenu {...{ closeMenu }} />}
+                {children}
             </div>
         </div>);
     }

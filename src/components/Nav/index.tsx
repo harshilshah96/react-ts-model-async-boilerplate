@@ -1,34 +1,14 @@
 import * as React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { Logo } from '../ReusableComponents/Logo';
-import { HamMenu } from '../ReusableComponents/HamMenu';
-import { NavLinks } from '../ReusableComponents/NavLinks';
-import { BackButton } from '../ReusableComponents/BackButton';
-import './nav.scss';
-import { CloseButton } from '../ReusableComponents/CloseButton';
+import { Link } from 'react-router-dom';
 
-export interface INavBarProps {
-    hasMenu: boolean;
-    openMenu?: () => void;
-    closeMenu?: () => void;
-    isMenuOpen?: boolean;
+export class NavBar extends React.PureComponent {
+    render() {
+        return (<div style={{ display: 'flex', height: '40px', fontSize: '14px', alignItems: 'center' }}>
+            <Link to="/" style={{ cursor: 'pointer', width: '50px', border: 'solid 2px' }}>Home</Link>
+            <Link to="/aboutus"
+                style={{ cursor: 'pointer', width: '50px', border: 'solid 2px', marginLeft: '21px' }}>
+                About Us
+            </Link>
+        </div>);
+    }
 }
-
-export function NavBar(props: INavBarProps) {
-
-    const { hasMenu, openMenu, closeMenu, isMenuOpen } = props;
-    return <div className="nav-container">
-        <div className="nav-content">
-            <Logo style={{ flex: 1 }} />
-            {hasMenu ?
-                <React.Fragment>
-                    {
-                        isMenuOpen ?
-                            <CloseButton className="nav-close" onClick={closeMenu} /> :
-                            <HamMenu className="nav-ham" onClick={openMenu} />
-                    }
-                    <NavLinks className="nav-links" />
-                </React.Fragment> : <BackButton />}
-        </div>
-    </div>;
-};

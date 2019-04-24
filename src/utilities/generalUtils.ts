@@ -31,5 +31,3 @@ export function getDateFromString(d: string) {
     let date = new Date(d);
     return `${monthNames[date.getMonth()]} ${date.getDate()} ${date.getFullYear()}`;
 }
-
-export const setFirstLetterCapital = (str: string) => `${str[0].toUpperCase()}${str.substr(1)}`;

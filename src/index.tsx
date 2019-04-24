@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Home } from './components/Home';
 import { AboutUs } from './components/AboutUs';
-require('./fonts.scss');
 
 ReactDOM.render(
     <Provider store={store}>
@@ -15,8 +14,8 @@ ReactDOM.render(
                     exact path="/"
                     component={Home}
                 />
-                <Route  
-                    exact path="/about"
+                <Route 
+                    exact path="/aboutus"
                     component={AboutUs}
                 />
             </Switch>
