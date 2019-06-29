@@ -1,2 +1,2 @@
-# Teamzy
+# React Redux Boilerplate
 
